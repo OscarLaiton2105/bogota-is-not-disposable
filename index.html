@@ -135,6 +135,17 @@ figcaption { font-size: 14px; color: var(--muted); }
 .reflection .pp { color: inherit; }
 body.show-pp .reflection .pp { color: #15233A; background: #FFE58A; box-shadow: 0 0 0 2px #FFE58A; }
 
+.videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
+.video { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.video-frame { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; overflow: hidden; background: var(--mast-bg); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-link { display: grid; place-items: center; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; background: var(--mast-bg); color: var(--mast-ink); text-decoration: none; font-family: var(--font-display); font-weight: 600; font-size: 18px; }
+.video-link span { border: 2px solid var(--yellow); border-radius: 999px; padding: 10px 20px; }
+.video h3 { font-size: 18px; }
+.video p { font-size: 15px; color: var(--muted); }
+.video .lang { font-family: var(--font-display); font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); }
+.conclusion { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px clamp(18px, 4vw, 40px); display: grid; gap: 16px; }
+.conclusion .closing { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); color: var(--navy); }
 footer { margin-top: 64px; border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 28px 48px; display: grid; gap: 12px; }
 footer ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; font-size: 14.5px; color: var(--muted); }
@@ -149,6 +160,7 @@ footer .credit { font-size: 14px; color: var(--muted); }
   .materials { grid-template-columns: 1fr; }
   .materials .stickers { grid-template-columns: 1fr 1fr; }
   .qa .pair { grid-template-columns: 1fr; }
+  .videos { grid-template-columns: 1fr; }
   .tl { grid-template-columns: 64px 1fr; }
   .tl .h { display: none; }
   .tl .ca, .tl .co { grid-column: 2; border-left: 0; }
@@ -179,9 +191,11 @@ footer .credit { font-size: 14px; color: var(--muted); }
 <nav class="toc" aria-label="Sections">
   <div class="wrap">
     <a href="#problem">The problem</a>
+    <a href="#videos">Videos</a>
     <a href="#compare">Canada vs. Colombia</a>
     <a href="#solutions">My solutions</a>
     <a href="#past">Looking back</a>
+    <a href="#conclusion">Conclusion</a>
     <a href="#sources">Sources</a>
     <button id="pp-toggle" type="button" aria-pressed="false">Highlight past perfect</button>
   </div>
@@ -202,6 +216,15 @@ footer .credit { font-size: 14px; color: var(--muted); }
       <div class="fig"><b>10,400 t</b><span>recovered for recycling per month, a small part of the total</span></div>
     </div>
     <p class="note" style="margin-top:12px">Data: UAESP, reported by El Espectador (April 2026).</p>
+
+    <div id="videos" class="read stack" style="margin-top:48px">
+      <h3>Watch: water pollution in the world and in Colombia</h3>
+      <p>These two videos helped me understand the problem. The first one explains how plastic and other waste reach the ocean. The second one shows the Bogotá River after it passes through the city.</p>
+    </div>
+    <div class="videos">
+      <div class="video"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/HQTUWK7CM-Y" title="How We Can Keep Plastics Out of Our Ocean" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><span class="lang">National Geographic · English · 3 min</span><h3>How We Can Keep Plastics Out of Our Ocean</h3><p>How plastic from land reaches the sea, breaks into small pieces and ends up inside animals.</p><p><a href="https://www.youtube.com/watch?v=HQTUWK7CM-Y" target="_blank" rel="noopener">Watch on YouTube</a></p></div>
+      <div class="video"><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/qtRZF5_Ufw0" title="El punto donde muere el río Bogotá" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><span class="lang">Noticias Caracol · Spanish · 2020</span><h3>El punto donde muere el río Bogotá</h3><p>The middle part of the Bogotá River, where the city's waste water, garbage and plastics arrive every day.</p><p><a href="https://www.youtube.com/watch?v=qtRZF5_Ufw0" target="_blank" rel="noopener">Watch on YouTube</a></p></div>
+    </div>
   </section>
 
   <section id="compare">
@@ -306,6 +329,16 @@ footer .credit { font-size: 14px; color: var(--muted); }
       <p>I <span class="pp">had always thought</span> that big changes need a lot of money or a new law. This story showed me that a small group can start something big if they are patient. That is why the monthly cleanup is the center of my campaign.</p>
     </div>
   </section>
+
+  <section id="conclusion">
+    <div class="sec-head"><span class="sec-num">5</span><h2>Conclusion</h2></div>
+    <div class="conclusion read">
+      <p>This project changed the way I see a plastic bottle. When I started, I <span class="pp">had thought</span> that plastic pollution was a problem only for the government. After comparing Canada and Colombia, I understood that both countries <span class="pp">had made</span> good laws, but the laws alone <span class="pp">had not solved</span> the problem. The real difference was the community.</p>
+      <p>Canada taught me that a big change can start small. Bogotá doesn't need to wait for a new law. We can start with one wetland and a few volunteers. If we do it every month, more people will join. And if every person in Bogotá changed one plastic habit, our rivers would be alive again.</p>
+      <p>We should separate our waste, we must stop throwing plastic in the street, and we can support the waste pickers who recycle for all of us. I am going to start with my own habits.</p>
+      <p class="closing">Bogotá is not disposable. Let’s take care of it.</p>
+    </div>
+  </section>
 </main>
 
 <footer id="sources">
@@ -319,6 +352,8 @@ footer .credit { font-size: 14px; color: var(--muted); }
       <li><a href="https://www.elpais.com.co/medio-ambiente/uso-de-bolsas-plasticas-en-colombia-se-redujo-un-53-informa-minambiente.html" target="_blank" rel="noopener">Uso de bolsas plásticas en Colombia se redujo un 53%</a>, El País (2019).</li>
       <li><a href="https://www.minambiente.gov.co/gobierno-unifica-el-codigo-de-colores-para-la-separacion-de-residuos-en-la-fuente-a-nivel-nacional/" target="_blank" rel="noopener">Gobierno unifica el código de colores</a>, Ministerio de Ambiente.</li>
       <li><a href="https://www.elespectador.com/bogota/generacion-de-basura-en-bogota-crecio-55-entre-2024-y-2026-segun-reporte-de-la-uaesp/" target="_blank" rel="noopener">Generación de basura en Bogotá creció entre 2024 y 2026</a>, El Espectador (2026).</li>
+      <li><a href="https://www.youtube.com/watch?v=HQTUWK7CM-Y" target="_blank" rel="noopener">How We Can Keep Plastics Out of Our Ocean</a>, National Geographic (video).</li>
+      <li><a href="https://www.youtube.com/watch?v=qtRZF5_Ufw0" target="_blank" rel="noopener">El punto donde muere el río Bogotá: así luce la cuenca media</a>, Noticias Caracol (video, 2020).</li>
     </ol>
     <p class="credit">Bogotá Is Not Disposable is a student campaign for English 3. The @bogotaisnotdisposable account, the cleanup dates and the partner cafés are part of the proposal.</p>
   </div>
